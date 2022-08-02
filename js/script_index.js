@@ -1,18 +1,8 @@
 // 此為回到最上層按鈕的JS
 {
-    /*window.onscroll = () =>{
-        if(window.scrollY >60){
-            document.querySelector('#scroll-top').classList.add('active');
-        }else{
-            document.querySelector('#scroll-top').classList.remove('active');
-        }
-    }
-    let toggle_button = document.querySelector('.toggle_button');
-    toggle_button.onclick = function (){
-        toggle_button.classList.toggle('active')
-    }*/
     //jquery
     $(document).ready(function (){
+        //輸入房間KEY以控制
         $(".room_button").click(function (e) {
             console.log($(".room_input").val());
             var Key = $(".room_input").val();
