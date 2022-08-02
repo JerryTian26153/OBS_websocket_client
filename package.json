@@ -1,0 +1,8 @@
+{
+  "name": "OBS_websocket_client",
+  "version": "1.0.0",
+  "dependencies": {
+    "axios": "^0.27.2",
+    "xhr2": "^0.2.1"
+  }
+}
