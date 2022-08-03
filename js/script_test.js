@@ -1,5 +1,32 @@
 // 此為回到最上層按鈕的JS
+import axios from "/js/axios.js";
+
 {
+    var voteResult = {
+        question: "選哪隻英雄",
+        keywords:["a","b","c"],
+        voteResult:{
+            "a":"達瑞斯",
+            "b":"厄薩斯",
+            "c":"拉姆斯"
+        },
+        voteTime:600,
+        pollAccount:"shabi94ni"
+    }
+    console.log(voteResult)
+    console.log(JSON.stringify(voteResult))
+    /*axios({
+        method: 'get',
+        baseURL: 'http://localhost:8080',
+        url: '/VoteResultAPI',
+        params: { account: "shabi94ni" },
+        //'Content-Type': 'application/json'
+    })
+        .then((result) => { console.log(result.data) })
+        .catch((err) => { console.error(err) })
+    */
+
+    //window.open('index.html', 'jump');
     /* youtube-search.js */
 
     // 參考資料 : https://medium.com/%E5%B0%8F%E9%83%AD-%E0%B9%80%E0%B8%88%E0%B8%99/%E8%8F%9C%E9%B3%A5%E5%B7%A5%E7%A8%8B%E5%B8%AB-youtube-data-api-%E8%BC%89%E5%85%A5%E6%92%AD%E6%94%BE%E6%B8%85%E5%96%AE%E4%B8%A6%E5%88%87%E6%8F%9B%E6%AD%8C%E6%9B%B2-356d8e454ca3
@@ -36,7 +63,8 @@
     .then(data => {
       console.log(data)
     })*/
-    var account = {
+
+    /*var account = {
         email: 'abc123@gmail.com',
         password: '1234'
     }
@@ -62,7 +90,7 @@
             console.log('資料讀取錯誤!!');
         }
 
-    }
+    }*/
 
 
 }
