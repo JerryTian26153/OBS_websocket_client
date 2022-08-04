@@ -18,7 +18,11 @@
         });
 
     })
-
+    function showVotePage() {
+        var voteResultPage;
+        voteResultPage = window.open('voteResultPage.html', 'open', 'height=500, width=500');
+        //voteResultPage = window.open('index.html', 'open', 'height=500, width=500');
+    }
 
     function createVoting() {
         let serial = 1; // 流水號
