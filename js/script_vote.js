@@ -9,6 +9,7 @@
             let votingSelectionTemplate =
                 ' <div class="input-group mb-1">\n' +
                 '   <span class="input-group-text">選項編號</span>\n' +
+                '   <input id="setial'+ i +'" type="text" class="form-control voteName_input">\n' +
                 '   <span class="input-group-text">選項內容</span>\n' +
                 '   <input id="attr'+ i +'" type="text" class="form-control voteName_input">\n' +
                 ' </div>'
