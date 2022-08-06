@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>投票頁面</title>
+  <title>投票結果</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -17,13 +17,16 @@
 <body>
 <div class="mt-3 container-fluid ">
   <div class="row justify-content-center">
-    <div class="col-8">
-      <label class="mt-3 form-label" style="font-weight: bold">投票議題</label>
-      <div class="input-group mb-3">
-        <input type="text" class="form-control voteName_input">
-      </div>
+    <div class="col-11">
+      <table class="table">
+        <thead>
+        <tr>
+          <th class="justify-content-center" id="voteTitle" style="font-size: 30px;"></th>
+        </tr>
+        </thead>
+      </table>
     </div>
-    <div class="col-8">
+    <div class="col-11">
       <table class="table">
         <thead>
         <tr>
@@ -31,16 +34,34 @@
         </tr>
         </thead>
       </table>
-      <div class="sceneList list-group" id="votingSelectionTable">
-        <div class="input-group mb-1">
-          <span class="input-group-text">選項名</span>
-          <input type="text" class="form-control voteName_input">
-          <span class="input-group-text">關鍵字</span>
-          <input type="text" class="form-control voteName_input">
+      <div class="container-fluid" >
+        <div class="row">
+          <div class="col-3" id="optionsTable">
+<!--            <div class=" mt-3" style="height: 30px;font-size: 12px;line-height: 14px">-->
+<!--              達瑞斯不是達瑞文達瑞斯不是達瑞文-->
+<!--            </div>-->
+<!--            <div class=" mt-3" style="height: 30px">-->
+<!--              厄薩斯-->
+<!--            </div>-->
+<!--            <div class=" mt-3" style="height: 30px">-->
+<!--              拉姆斯-->
+<!--            </div>-->
+          </div>
+          <div class="col-9" id="resultValueTable">
+            <div class="progress mt-3" style="height: 30px">
+              <div class="progress-bar" style="width:70%;height:30px">70%</div>
+            </div>
+
+            <div class="progress mt-3" style="height: 30px">
+              <div class="progress-bar" style="width:16%;height:30px">16%</div>
+            </div>
+
+            <div class="progress mt-3" style="height: 30px">
+              <div class="progress-bar" style="width:14%;height:30px">14%</div>
+            </div>
+          </div>
         </div>
       </div>
-      <a id="addSelectionButton" href="#" class="list-group-item list-group-item-action">新增選項</a>
-      <button type="button" class="mt-3 btn btn-success">開始投票</button>
     </div>
   </div>
 
