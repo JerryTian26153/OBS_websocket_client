@@ -9,7 +9,6 @@
             let votingSelectionTemplate =
                 ' <div class="input-group mb-1">\n' +
                 '   <span class="input-group-text">選項編號</span>\n' +
-                '   <input id="serial'+ i +'" type="text" class="form-control voteName_input">\n' +
                 '   <span class="input-group-text">選項內容</span>\n' +
                 '   <input id="attr'+ i +'" type="text" class="form-control voteName_input">\n' +
                 ' </div>'
@@ -29,13 +28,9 @@
         //votingInfo.timeLimit   = $('#timeLimit').val(); // 尚未建立
         //votingInfo.pollAccount = $('#pollAccount').val(); // 尚未建立
 
-        let serialStr = '#serial' + serial;
 
         //console.log($("#serial" + serial).val());
-        while($('#serial' + serial).length > 0) {
             console.log(typeof responseArr);
-            responseArr.push($('#serial' + serial).val());
-            votingInfo['serial' + serial] = $('#attr' + serial).val();
             serial++;
         }
 
