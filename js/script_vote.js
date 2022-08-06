@@ -32,9 +32,13 @@
         //votingInfo.timeLimit   = $('#timeLimit').val(); // 尚未建立
         //votingInfo.pollAccount = $('#pollAccount').val(); // 尚未建立
 
+        let serialStr = '#response' + serial;
 
         //console.log($("#serial" + serial).val());
+        while($('#response' + serial).length > 0) {
             console.log(typeof responseArr);
+            responseArr.push($('#response' + serial).val());
+            votingInfo['response' + serial] = $('#attr' + serial).val();
             serial++;
         }
 
