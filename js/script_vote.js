@@ -43,7 +43,7 @@
         }
 
         votingInfo.legalResponse = responseArr;
-        // pop out from while (Name doesn't exist)
+        // pop out from while (Name doesn't exist)TEST321
 
         console.log(votingInfo);
         votingInfo = JSON.stringify(votingInfo);
