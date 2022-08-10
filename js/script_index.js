@@ -1,7 +1,28 @@
 // 此為回到最上層按鈕的JS
 {
+    function showVotePage() {
+        var voteResultPage;
+        voteResultPage = window.open('votePage.html', 'open', 'height=500, width=700');
+        //voteResultPage = window.open('index.html', 'open', 'height=500, width=500');
+    }
     //jquery
     $(document).ready(function (){
+        $(".page-button").click(function (e) {
+            $(".page1").css("display","none")
+            $(".page2").css("display","none")
+            $(".page3").css("display","none")
+            //console.log(e.target.id);
+
+            $("." + e.target.id).css("display","")
+            /*$(".card_show").css("display", "");
+            $(".black_background").css("display", "");*/
+        });
+
+
+
+
+
+
         //輸入房間KEY以控制
         $(".room_button").click(function (e) {
             console.log($(".room_input").val());
@@ -29,17 +50,7 @@
             });//取得所有待審核預約json完成
 
         });
-        var votingSelectionTable = $("#votingSelectionTable")
-        var votingSelectionTemplate =
-            ' <div class="input-group mb-1">\n' +
-            '   <span class="input-group-text">選項名</span>\n' +
-            '   <input type="text" class="form-control voteName_input">\n' +
-            '   <span class="input-group-text">關鍵字</span>\n' +
-            '   <input type="text" class="form-control voteName_input">\n' +
-            ' </div>'
-        $("#addSelectionButton").click(function (e) {
-            votingSelectionTable.append(votingSelectionTemplate);
-        });
+
 
     })
 }

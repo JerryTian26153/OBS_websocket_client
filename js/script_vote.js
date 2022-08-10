@@ -18,9 +18,9 @@
         });
 
     })
-    function showVotePage() {
+    function showVoteResultPage() {
         var voteResultPage;
-        voteResultPage = window.open('voteResultPage.html', 'open', 'height=500, width=500');
+        voteResultPage = window.open('voteResultPage.html', 'open', 'left=500, top=500, height=500, width=500');
         //voteResultPage = window.open('index.html', 'open', 'height=500, width=500');
     }
 
