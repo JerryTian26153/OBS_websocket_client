@@ -12,4 +12,8 @@
   transform: scale(1.08);
 }
 
+.nav-item {
+  cursor: pointer;
+}
+
 /*# sourceMappingURL=pagestyle.css.map */

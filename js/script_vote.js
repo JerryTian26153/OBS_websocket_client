@@ -9,7 +9,7 @@
             let votingSelectionTemplate =
                 ' <div class="input-group mb-1">\n' +
                 '   <span class="input-group-text">選項編號</span>\n' +
-                '   <input id="serial'+ i +'" type="text" class="form-control voteName_input">\n' +
+                '   <input id="response'+ i +'" type="text" class="form-control voteName_input">\n' +
                 '   <span class="input-group-text">選項內容</span>\n' +
                 '   <input id="attr'+ i +'" type="text" class="form-control voteName_input">\n' +
                 ' </div>'
@@ -18,9 +18,9 @@
         });
 
     })
-    function showVotePage() {
+    function showVoteResultPage() {
         var voteResultPage;
-        voteResultPage = window.open('voteResultPage.html', 'open', 'height=500, width=500');
+        voteResultPage = window.open('voteResultPage.html', 'open', 'left=500, top=500, height=500, width=500');
         //voteResultPage = window.open('index.html', 'open', 'height=500, width=500');
     }
 
@@ -29,21 +29,16 @@
         let responseArr = [];
         let votingInfo = {}; // Object
 
-        votingInfo.title       = $('#votingQuestion').val();
         //votingInfo.timeLimit   = $('#timeLimit').val(); // 尚未建立
-        //votingInfo.pollAccount = $('#pollAccount').val(); // 尚未建立
-
-        let serialStr = '#serial' + serial;
-
+        votingInfo.pollAccount = sessionStorage.getItem("user"); // 尚未建立
+        votingInfo.title  = $('#votingQuestion').val();
+        votingInfo.legalResponse = new Map;
         //console.log($("#serial" + serial).val());
-        while($('#serial' + serial).length > 0) {
+        while($('#response' + serial).length > 0) {
             console.log(typeof responseArr);
-            responseArr.push($('#serial' + serial).val());
-            votingInfo['serial' + serial] = $('#attr' + serial).val();
+            votingInfo.legalResponse.set($('#response' + serial).val(),$('#attr' + serial).val())
             serial++;
         }
-
-        votingInfo.legalResponse = responseArr;
         // pop out from while (Name doesn't exist)TEST321
 
         console.log(votingInfo);
