@@ -41,7 +41,6 @@
         }
         // pop out from while (Name doesn't exist)TEST321
 
-        console.log(votingInfo);
         votingInfo = JSON.stringify(votingInfo);
         return votingInfo;
     }
@@ -50,7 +49,24 @@
         console.log($('#votingQuestion').val())
 
         $('#startVoting').click(function (){
-            console.log(createVoting());
+            var data = createVoting();
+            console.log(data);
+            url =
+            $.ajax({
+                type: "POST",
+                url: url,
+                data:data,
+                success: function(re){
+                    if(re == true){
+                        alert("投票發起成功，請前往投票結果查看。");
+                    }
+                    else
+                        alert("投票發起失敗，請重新嘗試");
+                },
+                error: function (thrownError) {
+                    alert(thrownError);
+                }
+            });
         })
     })
 }
