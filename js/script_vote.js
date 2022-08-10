@@ -29,7 +29,8 @@
         let responseArr = [];
         let votingInfo = {}; // Object
 
-        //votingInfo.timeLimit   = $('#timeLimit').val(); // 尚未建立
+        var sec = parseInt($('#timeLimit').val()) * 60;
+        votingInfo.timeLimit   = sec; // 尚未建立
         votingInfo.pollAccount = sessionStorage.getItem("user"); // 尚未建立
         votingInfo.title  = $('#votingQuestion').val();
         votingInfo.legalResponse = new Map;
@@ -51,7 +52,7 @@
         $('#startVoting').click(function (){
             var data = createVoting();
             console.log(data);
-            url =
+            url = "http://127.0.0.1:55304/OBS_websocket/startVote";
             $.ajax({
                 type: "POST",
                 url: url,
