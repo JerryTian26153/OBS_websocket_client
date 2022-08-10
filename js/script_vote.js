@@ -29,21 +29,16 @@
         let responseArr = [];
         let votingInfo = {}; // Object
 
-        votingInfo.title       = $('#votingQuestion').val();
         //votingInfo.timeLimit   = $('#timeLimit').val(); // 尚未建立
-        //votingInfo.pollAccount = $('#pollAccount').val(); // 尚未建立
-
-        let serialStr = '#response' + serial;
-
+        votingInfo.pollAccount = sessionStorage.getItem("user"); // 尚未建立
+        votingInfo.title  = $('#votingQuestion').val();
+        votingInfo.legalResponse = new Map;
         //console.log($("#serial" + serial).val());
         while($('#response' + serial).length > 0) {
             console.log(typeof responseArr);
-            responseArr.push($('#response' + serial).val());
-            votingInfo['response' + serial] = $('#attr' + serial).val();
+            votingInfo.legalResponse.set($('#response' + serial).val(),$('#attr' + serial).val())
             serial++;
         }
-
-        votingInfo.legalResponse = responseArr;
         // pop out from while (Name doesn't exist)TEST321
 
         console.log(votingInfo);
