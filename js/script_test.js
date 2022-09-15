@@ -23,9 +23,10 @@ import axios from "/js/axios.js";
     var Result = JSON.stringify(voteEvent);
     console.log(Result)
 
-    var intervalID = setInterval(function() {
+    /*var intervalID = setInterval(function() {
         alert('五秒鐘又到了！');
-    }, 5000);
+        clearTimeout(intervalID);
+    }, 5000);*/
 
     $(document).ready(function (){
         var i=0;
@@ -80,3 +81,4 @@ import axios from "/js/axios.js";
 //var intervalID = setInterval(function() {
 //     alert('十秒鐘又到了！');
 // }, 10000);
+/**/

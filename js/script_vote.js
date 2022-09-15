@@ -8,6 +8,10 @@
         $("#addSelectionButton").click(function (e) {
             let votingSelectionTemplate =
                 ' <div class="input-group mb-1">\n' +
+                '   <div class="close_button">\n' +
+                '       <span></span>\n' +
+                '       <span></span>\n' +
+                '   </div>'+
                 '   <span class="input-group-text">選項編號</span>\n' +
                 '   <input id="response'+ i +'" type="text" class="form-control voteName_input">\n' +
                 '   <span class="input-group-text">選項內容</span>\n' +
@@ -15,8 +19,14 @@
                 ' </div>'
             votingSelectionTable.append(votingSelectionTemplate);
             i=i+1;
-        });
 
+            $(".close_button").click(function (e) {
+                e.target.closest('.input-group').remove();
+            });
+        });
+        $(".close_button").click(function (e) {
+            e.target.closest('.input-group').remove();
+        });
     })
     function showVoteResultPage() {
         var voteResultPage;
@@ -50,7 +60,35 @@
         console.log($('#votingQuestion').val())
 
         $('#startVoting').click(function (){
+<<<<<<< Updated upstream
             console.log(createVoting());
+=======
+            console.log($('#votingSelectionTable:has(div)').children.length)
+            if($('#votingSelectionTable:has(div)').children.length!=0){
+
+                var data = createVoting();
+                console.log(data);
+                url = "http://127.0.0.1:55304/OBS_websocket/startVote";
+                $.ajax({
+                    type: "POST",
+                    url: url,
+                    data:data,
+                    success: function(re){
+                        if(re == true){
+                            alert("投票發起成功，請前往投票結果查看。");
+                        }
+                        else
+                            alert("投票發起失敗，請重新嘗試");
+                    },
+                    error: function (thrownError) {
+                        alert(thrownError);
+                    }
+                });
+            }
+            else{
+                window.confirm("彈跳視窗想要顯示的文字");
+            }
+>>>>>>> Stashed changes
         })
     })
 }
