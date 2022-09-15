@@ -60,9 +60,7 @@
         console.log($('#votingQuestion').val())
 
         $('#startVoting').click(function (){
-<<<<<<< Updated upstream
             console.log(createVoting());
-=======
             console.log($('#votingSelectionTable:has(div)').children.length)
             if($('#votingSelectionTable:has(div)').children.length!=0){
 
@@ -88,7 +86,6 @@
             else{
                 window.confirm("彈跳視窗想要顯示的文字");
             }
->>>>>>> Stashed changes
         })
     })
 }
