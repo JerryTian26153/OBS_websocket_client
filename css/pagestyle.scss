@@ -309,6 +309,17 @@ html,body{
 
   }
 }
+
+/*  video 21min  */
+.video-container{
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(4, 25%);
+  grid-gap: 20px 5px;
+  overflow-x: hidden;
+}
+
+
 //
 //.edit_button{
 //  width: 40px;
