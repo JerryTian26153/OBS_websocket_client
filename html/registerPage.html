@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>登入頁面</title>
+    <title>註冊頁面</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -29,7 +29,7 @@
             <table class="table">
                 <thead>
                 <tr>
-                    <th class="justify-content-center" id="voteTitle" style="font-size: 30px;">登入</th>
+                    <th class="justify-content-center" id="voteTitle" style="font-size: 30px;">註冊</th>
                 </tr>
                 </thead>
             </table>
@@ -43,16 +43,25 @@
                 </thead>
             </table>-->
             <div class="sceneList list-group" id="votingSelectionTable">
+
                 <div class="input-group mb-1">
                     <span class="input-group-text">帳號</span>
                     <input id="account" type="text" class="form-control voteName_input">
                 </div>
                 <div class="input-group mb-1">
                     <span class="input-group-text">密碼</span>
-                    <input id="password" type="text" class="form-control voteName_input">
+                    <input id="password" type="password" class="form-control voteName_input">
+                </div>
+                <!--        尚未實作確認密碼的部分        -->
+                <div class="input-group mb-1">
+                    <span class="input-group-text">確認密碼</span>
+                    <input type="password" class="form-control voteName_input">
+                </div>
+                <div class="input-group mb-1">
+                    <span class="input-group-text">YT帳號</span>
+                    <input id="YT_account" type="text" class="form-control voteName_input">
                 </div>
             </div>
-            <button type="button" id="login_btn" class="mt-3 btn btn-success">登入</button>
             <button type="button" id="register_btn" class="mt-3 btn btn-success">註冊</button>
         </div>
     </div>
