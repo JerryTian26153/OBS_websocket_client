@@ -37,7 +37,8 @@
         let responseArr = [];
         let votingInfo = {}; // Object
 
-        //votingInfo.timeLimit   = $('#timeLimit').val(); // 尚未建立
+        var sec = parseInt($('#timeLimit').val()) * 60;
+        votingInfo.timeLimit   = sec; // 尚未建立
         votingInfo.pollAccount = sessionStorage.getItem("user"); // 尚未建立
         votingInfo.title  = $('#votingQuestion').val();
         votingInfo.legalResponse = new Map;
@@ -49,7 +50,6 @@
         }
         // pop out from while (Name doesn't exist)TEST321
 
-        console.log(votingInfo);
         votingInfo = JSON.stringify(votingInfo);
         return votingInfo;
     }
@@ -58,32 +58,24 @@
         console.log($('#votingQuestion').val())
 
         $('#startVoting').click(function (){
-            console.log(createVoting());
-            console.log($('#votingSelectionTable:has(div)').children.length)
-            if($('#votingSelectionTable:has(div)').children.length!=0){
-
-                var data = createVoting();
-                console.log(data);
-                url = "http://127.0.0.1:55304/OBS_websocket/startVote";
-                $.ajax({
-                    type: "POST",
-                    url: url,
-                    data:data,
-                    success: function(re){
-                        if(re == true){
-                            alert("投票發起成功，請前往投票結果查看。");
-                        }
-                        else
-                            alert("投票發起失敗，請重新嘗試");
-                    },
-                    error: function (thrownError) {
-                        alert(thrownError);
+            var data = createVoting();
+            console.log(data);
+            url = "http://127.0.0.1:55304/OBS_websocket/startVote";
+            $.ajax({
+                type: "POST",
+                url: url,
+                data:data,
+                success: function(re){
+                    if(re == true){
+                        alert("投票發起成功，請前往投票結果查看。");
                     }
-                });
-            }
-            else{
-                window.confirm("彈跳視窗想要顯示的文字");
-            }
+                    else
+                        alert("投票發起失敗，請重新嘗試");
+                },
+                error: function (thrownError) {
+                    alert(thrownError);
+                }
+            });
         })
     })
 }
