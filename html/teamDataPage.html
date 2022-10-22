@@ -42,9 +42,6 @@
         <li class="nav-item page-button">
           <a class="nav-link" href="javascript:void(0)" id="page3">團隊數據</a>
         </li>
-        <li class="nav-item page-button">
-          <a class="nav-link" href="javascript:void(0)" id="page4">管理工具</a>
-        </li>
       </ul>
       <a class="navbar-brand" href="#">
         <img src="../picture/people.png" alt="Avatar Logo" style="width:40px;" class="rounded-pill">
@@ -408,57 +405,121 @@
 <div class="container-fluid page3">
   <div class="row fixHeight">
     <div class="col-3 p-3">
-      <div class="card main_data viewer">
-        <p>觀看頻均人數</p>
+      <div class="card main_data viewer my-4">
+        <p>觀看平均人數</p>
         <span>4315</span>
       </div>
-    </div>
-    <div class="col-3 p-3">
-      <div class="card main_data viewCount">
-        <p>觀看總時長</p>
+      <div class="card main_data viewCount my-5">
+        <p>總觀看數</p>
         <span>8135</span>
       </div>
-    </div>
-    <div class="col-3 p-3">
-      <div class="card main_data subscription">
+      <div class="card main_data subscription my-5">
         <p>訂閱人數</p>
         <span>800</span>
-
       </div>
-    </div>
-    <div class="col-3 p-3">
       <div class="card main_data income">
         <p>營利</p>
         <span>451.63</span>
       </div>
     </div>
-    <div class="col-12 p-3 dataTable">
-      <div id="chart1" class="card">
+    <div class="col-9 p-3">
+      <div class="pd-3 card-sharp video-border-top row">
+        <div class="video-container col-6">
+          <p class="video-text">瀏覽你的影片</p>
+          <div class="video" onclick="video_details_show(this)">
+            <img src="https://i.ytimg.com/vi/6uZy86ePgO0/hqdefault.jpg" class="thumbnail" alt="">
+            <div class="content">
+              <img src="https://yt3.ggpht.com/fxlLUAZQPfYiK_6B-8ZQDbT1C_o-LkTTT75RO_JZ_78SbTSrNrRHB-X7nJkUJYKUb2XOos_Tnw=s88-c-k-c0x00ffffff-no-rj" class="channel-icon" alt="">
+              <div class="info">
+                <h4 class="title">ITZY “Boys Like You” M/V @ITZY</h4>
+                <p class="channel-name">JYP Entertainment</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="video-focus col-6">
+          <p class="video-text" style="display: none">點擊影片以查看詳細資訊</p>
+          <div class="video-details">
+              <img src="https://i.ytimg.com/vi/6uZy86ePgO0/hqdefault.jpg" class="thumbnail" alt="">
+              <div class="content">
+                <div class="info">
+                  <h4 class="title"></h4>
+                  <div class="p-2 bg-white text-black rounded">
+                    <h3>影片標題 : ITZY “Boys Like You” M/V @ITZY</h3>
+                  </div>
+                  <div class="mt-1 p-3 bg-white text-black rounded">
+                    <h3>敘述:</h3>
+                    <p>ITZY “Boys Like You” M/V @ITZY ​
 
+                      ITZY Pre-Release English Single "Boys Like You"
+                      ⏰ 2022.10.21 FRI 0AM (EST)│1PM (KST)
+                      ⏰ https://ITZY.lnk.to/BoysLikeYou
+
+                      ITZY "Boys Like You" Listen here:
+                      🎬 YouTube https://youtu.be/6uZy86ePgO0
+                      🎧 Spotify https://spoti.fi/3DdTShA
+                      🎧 Apple Music https://apple.co/3CKbEHy
+                      🎧 MelOn http://kko.to/4SkJxjRqxY
+
+                      [ITZY Official]
+                      ▶ https://www.youtube.com/c/ITZY
+                      ▶ https://www.instagram.com/itzy.all.in.us
+                      ▶ https://www.tiktok.com/@itzyofficial
+                      ▶ http://www.twitter.com/ITZYOfficial
+                      ▶ http://www.facebook.com/OfficialITZY
+                      ▶ https://www.weibo.com/u/7462077750?is
+                      ▶ http://ITZY.jype.com
+                      ▶ http://fans.jype.com/ITZY
+
+                      #ITZY #MIDZY #ITZY_BoysLikeYou
+
+                      Copyrights 2022 ⓒ JYP Entertainment. All Rights Reserved</p>
+                  </div>
+                  <div class="video-details-table">
+                    <div class="video-card card">
+                      <p>上傳狀態</p>
+                      <span>public</span>
+                    </div>
+                    <div class="video-card card">
+                      <p>點讚人數</p>
+                      <span>13</span>
+                    </div>
+                    <div class="video-card card">
+                      <p>討厭人數</p>
+                      <span>0</span>
+                    </div>
+                    <div class="video-card card">
+                      <p>觀看人數</p>
+                      <span>28</span>
+                    </div>
+                    <div class="video-card card">
+                      <p>留言數</p>
+                      <span>1</span>
+                    </div>
+<!--                    <div class="video-card card">-->
+<!--                      <p>tags</p>-->
+<!--                      <span>4315</span>-->
+<!--                    </div>-->
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
       </div>
     </div>
   </div>
-
 </div>
 <div class="mt-3 container-fluid page4" style="display: none">
-
+  <P></P>
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
-  let chart1 = c3.generate({
-    bindto: '#chart1',
-    data: {
-      columns: [
-        ['data1', 30, 200, 100, 400, 150, 250],
-        ['data2', 50, 20, 10, 40, 15, 25]
-      ]
-    }
-  });
 </script>
 <script type="module" src="../js/script_chat.js"></script>
 <script type="text/javascript" src="../js/script_collaboratorPage.js"></script>
 <script type="text/javascript" src="../js/script_index.js"></script>
 <script type="text/javascript" src="../js/script_vote.js"></script>
+<script type="text/javascript" src="../js/script_video.js"></script>
 
 </body>
 </html>
